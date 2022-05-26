@@ -1,0 +1,16 @@
+WEB
+1
+https://ndestates.sharepoint.com/sites/HSE/_vti_bin/owssvr.dll?XMLDATA=1&List={B2F3B34F-274F-4AC5-ACF1-6CD763250E68}&View=7405B2B7-9309-4C99-B1C8-787ED984FCB8&RowLimit=0&RootFolder=
+
+Selection={B2F3B34F-274F-4AC5-ACF1-6CD763250E68}-7405B2B7-9309-4C99-B1C8-787ED984FCB8
+EditWebPage=
+Formatting=None
+PreFormattedTextToColumns=True
+ConsecutiveDelimitersAsOne=True
+SingleBlockTextImport=False
+DisableDateRecognition=False
+DisableRedirections=False
+SharePointApplication=https://ndestates.sharepoint.com/sites/HSE/_vti_bin
+SharePointListView=7405B2B7-9309-4C99-B1C8-787ED984FCB8
+SharePointListName={B2F3B34F-274F-4AC5-ACF1-6CD763250E68}
+RootFolder=

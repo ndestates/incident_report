@@ -1,0 +1,15 @@
+// BEGIN:VCALENDAR
+// VERSION:2.0
+// BEGIN:VEVENT
+// CLASS:PUBLIC
+// DESCRIPTION:A thorough eye test to check vision and eye health.
+// DTSTART:20220726T095000
+// DTEND:20220726T101500
+// LOCATION:Jersey - Queen Street 20, JE2 4WD
+// SUMMARY:Adult eye test
+// TRANSP:TRANSPARENT
+// END:VEVENT
+// END:VCALENDAR
+// UID:grandvision/1658825400000
+// DTSTAMP:20220518T114611
+// PRODID:grandvision/appointment
