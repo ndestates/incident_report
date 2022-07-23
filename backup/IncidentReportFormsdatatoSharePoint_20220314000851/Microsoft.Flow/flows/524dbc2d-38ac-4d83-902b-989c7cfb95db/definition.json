@@ -1,10 +1,10 @@
 {
-  "name": "f72334ac-3b8a-4b52-a3a9-b5a631f212af",
-  "id": "/providers/Microsoft.Flow/flows/f72334ac-3b8a-4b52-a3a9-b5a631f212af",
+  "name": "51e873f3-b2d4-43da-9b68-a72c7218d733",
+  "id": "/providers/Microsoft.Flow/flows/51e873f3-b2d4-43da-9b68-a72c7218d733",
   "type": "Microsoft.Flow/flows",
   "properties": {
     "apiId": "/providers/Microsoft.PowerApps/apis/shared_logicflows",
-    "displayName": "Incident Report Forms Data to Sharepoint",
+    "displayName": "Incident Report Forms data to SharePoint",
     "definition": {
       "metadata": {
         "workflowEntityId": null,
@@ -12,13 +12,13 @@
         "flowclientsuspensionreason": "None",
         "flowclientsuspensiontime": null,
         "creator": {
-          "id": "260426cf-4b4b-4b80-b729-63d707eb6740",
+          "id": "ddc02d42-c492-454d-94ce-778a07b5b8c6",
           "type": "User",
-          "tenantId": "c0f51ac5-04cc-4792-88e1-a859a740e5df"
+          "tenantId": "07446956-493d-42c8-ad05-e939cb52153f"
         },
         "provisioningMethod": "FromDefinition",
         "failureAlertSubscription": true,
-        "clientLastModifiedTime": "2022-05-16T11:29:27.2693138Z"
+        "clientLastModifiedTime": "2022-03-11T23:12:01.0115711Z"
       },
       "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
       "contentVersion": "1.0.0.0",
@@ -35,7 +35,7 @@
       "triggers": {
         "When_a_new_response_is_submitted": {
           "metadata": {
-            "operationMetadataId": "0212ebed-4a31-4670-ad57-16408ae70432"
+            "operationMetadataId": "1b300f27-c3f4-4fa1-9fb1-741c50484c20"
           },
           "type": "OpenApiConnectionWebhook",
           "inputs": {
@@ -45,7 +45,7 @@
               "operationId": "CreateFormWebhook"
             },
             "parameters": {
-              "form_id": "xRr1wMwEkkeI4ahZp0Dl388mBCZLS4BLtylj1wfrZ0BURUNPUDNYNjJXM1JJVTJMMjJLMFpSN0ZQSC4u"
+              "form_id": "VmlEBz1JyEKtBek5y1IVP0ItwN2SxE1FlM53ige1uMZUMVFYOEpOR05RU05KM0NUMFhFWFZQMTdMMi4u"
             },
             "authentication": "@parameters('$authentication')"
           }
@@ -58,7 +58,7 @@
             "Get_response_details": {
               "runAfter": {},
               "metadata": {
-                "operationMetadataId": "03d6636f-a59a-41d4-9283-90bd4343dfcf"
+                "operationMetadataId": "3942955e-c353-4001-8fa3-a159a0335ef9"
               },
               "type": "OpenApiConnection",
               "inputs": {
@@ -68,7 +68,7 @@
                   "operationId": "GetFormResponseById"
                 },
                 "parameters": {
-                  "form_id": "xRr1wMwEkkeI4ahZp0Dl388mBCZLS4BLtylj1wfrZ0BURUNPUDNYNjJXM1JJVTJMMjJLMFpSN0ZQSC4u",
+                  "form_id": "VmlEBz1JyEKtBek5y1IVP0ItwN2SxE1FlM53ige1uMZUMVFYOEpOR05RU05KM0NUMFhFWFZQMTdMMi4u",
                   "response_id": "@items('Apply_to_each')?['resourceData/responseId']"
                 },
                 "authentication": "@parameters('$authentication')"
@@ -81,7 +81,7 @@
                 ]
               },
               "metadata": {
-                "operationMetadataId": "afb271fd-148d-48a0-9da7-93f66fc10425"
+                "operationMetadataId": "76a5f634-39e7-43fa-bbab-0d295b4b239d"
               },
               "type": "OpenApiConnection",
               "inputs": {
@@ -91,8 +91,8 @@
                   "operationId": "PostItem"
                 },
                 "parameters": {
-                  "dataset": "https://ndestates.sharepoint.com/sites/HSE",
-                  "table": "b2f3b34f-274f-4ac5-acf1-6cd763250e68",
+                  "dataset": "https://thepoweraddicts.sharepoint.com/sites/HSE",
+                  "table": "6b8aac62-ce04-47f5-9030-0f73746c2f7e",
                   "item/Title": "@outputs('Get_response_details')?['body/r96ee5f581a6345938230a9818a523523']",
                   "item/Description": "@outputs('Get_response_details')?['body/rb6fc57714f3f45dcb5b43f74a03b9b58']",
                   "item/IncidentDate": "@outputs('Get_response_details')?['body/rcb7721ce12d84b69834f1b27768c0ba2']",
@@ -109,7 +109,7 @@
                 "Get_file_content": {
                   "runAfter": {},
                   "metadata": {
-                    "operationMetadataId": "1613264c-2b07-42e2-93c6-0dd5c724ce65"
+                    "operationMetadataId": "bda35739-d913-401d-b271-1f5b1921383d"
                   },
                   "type": "OpenApiConnection",
                   "inputs": {
@@ -132,7 +132,7 @@
                     ]
                   },
                   "metadata": {
-                    "operationMetadataId": "c0cdbb7e-6416-4147-816b-788529691871"
+                    "operationMetadataId": "00b7e937-093a-429a-8de8-fc7d059788c7"
                   },
                   "type": "OpenApiConnection",
                   "inputs": {
@@ -142,8 +142,8 @@
                       "operationId": "CreateAttachment"
                     },
                     "parameters": {
-                      "dataset": "https://ndestates.sharepoint.com/sites/HSE",
-                      "table": "b2f3b34f-274f-4ac5-acf1-6cd763250e68",
+                      "dataset": "https://thepoweraddicts.sharepoint.com/sites/HSE",
+                      "table": "6b8aac62-ce04-47f5-9030-0f73746c2f7e",
                       "itemId": "@outputs('Create_item')?['body/ID']",
                       "displayName": "@item()?['name']",
                       "body": "@body('Get_file_content')"
@@ -158,7 +158,7 @@
                     ]
                   },
                   "metadata": {
-                    "operationMetadataId": "8b453b53-2bb8-4126-8b9e-a094144f3693"
+                    "operationMetadataId": "99b6738d-fc50-41fe-8882-6c5b949f4138"
                   },
                   "type": "OpenApiConnection",
                   "inputs": {
@@ -168,9 +168,9 @@
                       "operationId": "CreateFile"
                     },
                     "parameters": {
-                      "dataset": "https://ndestates.sharepoint.com/sites/HSE",
-                      "folderPath": "/Incident",
-                      "name": "@{utcNow()}-@{item()?['name']}-",
+                      "dataset": "https://thepoweraddicts.sharepoint.com/sites/HSE",
+                      "folderPath": "/Incident Files",
+                      "name": "@{guid()}@{items('Apply_to_each_attachment')?['name']}",
                       "body": "@body('Get_file_content')"
                     },
                     "authentication": "@parameters('$authentication')"
@@ -188,7 +188,7 @@
                     ]
                   },
                   "metadata": {
-                    "operationMetadataId": "258e45d8-f259-413f-b212-3238fd65e0da"
+                    "operationMetadataId": "a88f0cc9-4d1c-46a5-aeec-0890804ebd26"
                   },
                   "type": "OpenApiConnection",
                   "inputs": {
@@ -198,15 +198,43 @@
                       "operationId": "PatchFileItem"
                     },
                     "parameters": {
-                      "dataset": "https://ndestates.sharepoint.com/sites/HSE",
-                      "table": "a569c7ee-9baa-429d-a615-e06c4bb02a25",
+                      "dataset": "https://thepoweraddicts.sharepoint.com/sites/HSE",
+                      "table": "748b85fb-a038-4910-ad4a-f7192a847db3",
                       "id": "@outputs('Create_file')?['body/ItemId']",
-                      "item/Title": "@outputs('Create_item')?['body/Title']",
-                      "item/Category/Value": "@if(equals(item()?['referenceId'],'01S76IP3OXS3YH6BVT3VFIUISAXDXXFH6O'),'Photos','Additional Documents')",
                       "item/IncidentID": "@outputs('Create_item')?['body/ID']",
-                      "item/OData__ExtendedDescription": "@outputs('Create_item')?['body/Description']"
+                      "item/Category/Value": "@if(equals(item()?['referenceId'],'01O4KDJOUYGLAQAF3K2FHKZ55UM54YWD26'),'Photos','Additional Documents')"
                     },
                     "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Create_file_2": {
+                  "runAfter": {
+                    "Update_file_properties": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "f448e76a-e2e8-4659-aa79-4ea54e1e4391"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "connectionName": "shared_sharepointonline",
+                      "operationId": "CreateFile"
+                    },
+                    "parameters": {
+                      "dataset": "https://thepoweraddicts.sharepoint.com/sites/HSE",
+                      "folderPath": "@concat('/Incident Docs/', if(equals(item()?['referenceId'],'01O4KDJOUYGLAQAF3K2FHKZ55UM54YWD26'),'Photos','Additional Docs'))",
+                      "name": "@{guid()}@{items('Apply_to_each_attachment')?['name']}",
+                      "body": "@body('Get_file_content')"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
                   }
                 }
               },
@@ -216,7 +244,7 @@
                 ]
               },
               "metadata": {
-                "operationMetadataId": "54f030bd-f269-4637-a247-916f3650cb65"
+                "operationMetadataId": "03375b18-f078-4cef-91c4-a16afb9ac54b"
               },
               "type": "Foreach"
             },
@@ -227,7 +255,7 @@
                 ]
               },
               "metadata": {
-                "operationMetadataId": "5df21097-6daf-462d-8008-f08335d9a3c6"
+                "operationMetadataId": "1203a775-221c-4905-b5b7-f7d6aec4166d"
               },
               "type": "SetVariable",
               "inputs": {
@@ -243,7 +271,7 @@
                     "Append_to_array_variable": {
                       "runAfter": {},
                       "metadata": {
-                        "operationMetadataId": "3356f3e5-47dc-4b0d-a709-3eaca9c0910d"
+                        "operationMetadataId": "380b2f00-c0ce-4741-8917-c6b77c9fb42b"
                       },
                       "type": "AppendToArrayVariable",
                       "inputs": {
@@ -254,7 +282,7 @@
                   },
                   "runAfter": {},
                   "metadata": {
-                    "operationMetadataId": "c97f5a73-e6d2-4586-a50c-a121a59cee7f"
+                    "operationMetadataId": "f16e318f-a3f7-4fc2-84b9-b04eac0be3f5"
                   },
                   "type": "Foreach"
                 }
@@ -273,7 +301,7 @@
                 }
               },
               "metadata": {
-                "operationMetadataId": "77b2b36b-f2cf-45ca-9640-9105b76e5d5f"
+                "operationMetadataId": "093fa6d0-2d4b-4235-a5cd-5849e39803e1"
               },
               "type": "If"
             }
@@ -284,14 +312,14 @@
             ]
           },
           "metadata": {
-            "operationMetadataId": "26f5b9af-6d5e-4953-aa1d-991b2fa0e6bf"
+            "operationMetadataId": "5021efee-8967-42a0-bed1-c44bff5e38c7"
           },
           "type": "Foreach"
         },
         "Initialize_variable": {
           "runAfter": {},
           "metadata": {
-            "operationMetadataId": "d16dd052-3e6f-43d3-ae71-522ebe7e0828"
+            "operationMetadataId": "6885c89b-b835-4af1-9252-f2981e5d96f9"
           },
           "type": "InitializeVariable",
           "inputs": {
@@ -309,25 +337,24 @@
     },
     "connectionReferences": {
       "shared_microsoftforms": {
-        "connectionName": "shared-microsoftform-03bda0ee-ce61-489e-bb31-76ce-bec6bb0f",
+        "connectionName": "shared-microsoftform-da1798a8-b27c-42d1-8dbc-9a19c28b5f55",
         "source": "Embedded",
         "id": "/providers/Microsoft.PowerApps/apis/shared_microsoftforms",
         "tier": "NotSpecified"
       },
       "shared_sharepointonline": {
-        "connectionName": "0c7f7450dfc5495795a04f0d1577bed1",
+        "connectionName": "a0ed098f502a4ca4bb59859b743dc374",
         "source": "Embedded",
         "id": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
         "tier": "NotSpecified"
       },
       "shared_onedriveforbusiness": {
-        "connectionName": "shared-onedriveforbu-22311a77-23ff-4d53-9372-264f8fbbbebb",
+        "connectionName": "shared-onedriveforbu-47057d18-78a8-4277-bb30-e11be90924e8",
         "source": "Embedded",
         "id": "/providers/Microsoft.PowerApps/apis/shared_onedriveforbusiness",
         "tier": "NotSpecified"
       }
     },
-    "flowFailureAlertSubscribed": false,
-    "isManaged": false
+    "flowFailureAlertSubscribed": false
   }
 }
